@@ -1,0 +1,30 @@
+
+
+--- #make 
+make -C /lib/modules/3.2.0-4-amd64/build M=/home/james/Learn/Eudyptula/1 modules
+make[1]: Entering directory `/usr/src/linux-headers-3.2.0-4-amd64'
+  CC [M]  /home/james/Learn/Eudyptula/1/hello.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC      /home/james/Learn/Eudyptula/1/hello.mod.o
+  LD [M]  /home/james/Learn/Eudyptula/1/hello.ko
+make[1]: Leaving directory `/usr/src/linux-headers-3.2.0-4-amd64'
+
+--- #modinfo hello.ko
+filename:       /home/james/Learn/Eudyptula/1/hello.ko
+depends:
+vermagic:       3.2.0-4-amd64 SMP mod_unload modversions
+
+--- #insmod hello.ko
+
+--- #lsmod | grep hello
+hello                  12388  0 
+
+--- #rmmod hello
+
+--- #tail -n2 /var/log/debug
+Mar 31 22:27:18 unreal kernel: [142233.359199] Hello world!
+Mar 31 22:27:29 unreal kernel: [142244.953719] Unloading Exercise 1 Kernel Module!
+
+
+

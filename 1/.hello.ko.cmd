@@ -1,0 +1,1 @@
+cmd_/home/james/Learn/Eudyptula/1/hello.ko := ld -r -m elf_x86_64 -T /usr/src/linux-headers-3.2.0-4-common/scripts/module-common.lds --build-id  -o /home/james/Learn/Eudyptula/1/hello.ko /home/james/Learn/Eudyptula/1/hello.o /home/james/Learn/Eudyptula/1/hello.mod.o
