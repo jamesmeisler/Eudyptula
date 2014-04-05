@@ -1,7 +1,9 @@
 obj-m += hello.o
+	KERNEL_VER ?= $(shell uname -r)
+	KERNEL_DIR ?= /lib/modules/$(KERNEL_VER)/build
 
-all: 
-	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
+all:
+	make -C $(KERNEL_DIR) M=$(PWD) modules
 
 clean:
-	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
+	make -C $(KERNEL_DIR) M=$(PWD) clean
